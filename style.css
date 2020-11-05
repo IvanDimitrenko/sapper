@@ -43,30 +43,47 @@
     width: 8px;
     height: 8px;
 }
-
-.not_pressed{
+.cells{
 
     background-image: url(2.jpg);
     background-repeat: no-repeat;
-    background-position-x: -320px;
-    background-position-y: 0px;
 
 }
-.pressed{
 
-    background-image: url(2.jpg);
-    background-repeat: no-repeat;
-    background-position-x: 0px;
-    background-position-y: 0px;
+.not_pressed{
+    background-position-x: -320px;
+}
+.pressed{
+    background-position-x: 0px;  
 }
 
 .mines{
+  background-position-x: -288px;
+}
 
-    background-image: url(2.jpg);
-    background-repeat: no-repeat;
-    background-position-x: -288px;
-    background-position-y: 0px;
-
+.m1{
+    background-position-x: -32px;
+}
+.m2{
+    background-position-x: -64px;
+}
+.m3{
+    background-position-x: -96px;
+}
+.m4{
+    background-position-x: -128px;
+}
+.m5{
+    background-position-x: -160px;   
+}
+.m6{
+    background-position-x: -192px;
+}
+.m7{
+    background-position-x: -224px;
+}
+.m8{
+    background-position-x: -256px;
 }
 
 

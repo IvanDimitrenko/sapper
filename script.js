@@ -12,7 +12,7 @@
                 
                 mines_config    =       document.getElementsByClassName('config')[2],
                 mines_count     =       null,
-                mines           =       'm',
+                mines           =       10,
                 
                 table           =       document.createElement('div'),
                 body            =       document.getElementsByTagName('body')[0],
@@ -83,6 +83,7 @@
                     table_arr[i][y] = document.createElement('div');
                     table_arr[i][y].classList.add('d-td');
                     table_arr[i][y].classList.add('not_pressed');
+                    table_arr[i][y].classList.add('cells');
                     table_arr[i][y].innertHTML = 0;
                     console.log(table_arr[i][y].innertHTML);
                  
@@ -95,7 +96,7 @@
 
 
             spawn_mines();
-            add_number();
+
             body.addEventListener('click',function(e){ show(e) })
 
             /*console.dir(table_arr);
@@ -106,13 +107,13 @@
 
         function spawn_mines(){
                 let x , y ;
-             for(let i = 0 ; i < mines_count ; i++){
+             for(let k = 0 ; k < mines_count ; k++){
                 x = Math.floor(Math.random() * Math.floor(height));
                 y = Math.floor(Math.random() * Math.floor(width));
                 if(table_arr[x][y].innertHTML != mines) {   
                     if(check(x,y)){
                          table_arr[x][y].innertHTML = mines;
-                         add_number(x, y);
+                         count_number(x, y);
                         
                     }
 
@@ -122,17 +123,61 @@
 
         }
         
-        function add_number(x, y){
+        function count_number(x, y){
 
             for(let i = -1 ; i < 2 ; i++){
                 for(let j = -1 ; j < 2 ; j++){
-                    if(x + i < 0 || x + i >= height || y + j < 0 || y + j >= width )continue
-                    if(table_arr[x + i][y + j].innertHTML != mines && (i + x != x && j + y != y ) )
+                    if(x + i < 0 || x + i >= height || y + j < 0 || y + j >= width )continue;
+                    if( /*(i + x != x && j + y != y ) &&*/ table_arr[x + i][y + j].innertHTML != mines )
                         table_arr[x + i][y + j].innertHTML++; 
                     }
                 }
         }
 
+        function add_number(){
+            for(let i = 0 ; i < height ; i++) {
+                for(let y = 0 ; y < width ; y++){
+                  if(table_arr[i][y].innertHTML != 0 || table_arr[i][y].innertHTML != 10)table_arr[i][y].classList.remove('pressed');
+                    switch(table_arr[i][y].innertHTML){
+                        case 1 : {
+                            table_arr[i][y].classList.add('m1');
+                            break
+                        }
+                        case 2 : {
+                            table_arr[i][y].classList.add('m2');
+                            break;
+                        }
+                        case 3 : {
+                            table_arr[i][y].classList.add('m3');
+                            break;
+                        }
+                        case 4 : {
+                            table_arr[i][y].classList.add('m4');
+                            break;
+                        }
+                        case 5 : {
+                            table_arr[i][y].classList.add('m5');
+                            break;
+                        }
+                        case 6 : {
+                            table_arr[i][y].classList.add('m6');
+                            break;
+                        }
+                        case 7 : {
+                            table_arr[i][y].classList.add('m7');
+                            break;
+                        }
+                        case 8 : {
+                            table_arr[i][y].classList.add('m8');
+                            break;
+                        }
+                        
+                    }
+
+                }
+            }
+
+        }
         
 
         function check(x, y){
@@ -173,15 +218,50 @@
 
                 if(e.target.innertHTML == mines){
                   e.target.classList.add('mines')
-                }else {
-                    e.target.classList.add('pressed');
                 }
-            }                      
-        }
+                if(e.target.innertHTML != 0 ||  e.target.innertHTML != 10) e.target.classList.remove('pressed');
+                    switch( e.target.innertHTML){
+                        case 1 : {
+                            e.target.classList.add('m1');
+                            break
+                        }
+                        case 2 : {
+                            e.target.classList.add('m2');
+                            break;
+                        }
+                        case 3 : {
+                             e.target.classList.add('m3');
+                            break;
+                        }
+                        case 4 : {
+                             e.target.classList.add('m4');
+                            break;
+                        }
+                        case 5 : {
+                             e.target.classList.add('m5');
+                            break;
+                        }
+                        case 6 : {
+                             e.target.classList.add('m6');
+                            break;
+                        }
+                        case 7 : {
+                             e.target.classList.add('m7');
+                            break;
+                        }
+                        case 8 : {
+                             e.target.classList.add('m8');
+                            break;
+                        }
+                
+                    }                      
+                }
+            }
 
 
 
         function show(e){
+            add_number();
             for(let i = 0 ; i < height ; i++) {
 
                 for(let y = 0 ; y < width ; y++){
