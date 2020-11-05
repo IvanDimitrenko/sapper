@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.menu {
+
+    border: 1px solid black;
+    margin: 160px auto;
+    width: 300px;
+
+}
+
+.config{
+    width: 86%;
+    margin: 21px;
+
+}
+
+
+#play{
+    height: 50px;
+    width: 130px;
+    margin: 0px 28.3%;
+}
+
+.table{
+    border: 0.3px solid black;
+
+    margin: 30px auto;
+    display:table;
+}
+.d-tr{
+    width: 100%;
+    display:table-row; 
+   
+}
+.d-td{  
+
+   display: table-cell;
+    padding: 12px;
+    text-align: center;
+    width: 8px;
+    height: 8px;
+}
+
+.not_pressed{
+
+    background-image: url(2.jpg);
+    background-repeat: no-repeat;
+    background-position-x: -320px;
+    background-position-y: 0px;
+
+}
+.pressed{
+
+    background-image: url(2.jpg);
+    background-repeat: no-repeat;
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+
+.mines{
+
+    background-image: url(2.jpg);
+    background-repeat: no-repeat;
+    background-position-x: -288px;
+    background-position-y: 0px;
+
+}
+
+
+
+
